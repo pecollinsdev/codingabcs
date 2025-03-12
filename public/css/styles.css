@@ -1,0 +1,138 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F9FA;
+  padding-top: 30px;
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Popup Styling */
+#customPopup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #212529;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 320px;
+  text-align: center;
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#customPopup.visible {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+#popupMessage {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+#popupCloseBtn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#popupCloseBtn:hover {
+  background: #bd2130;
+}
+
+/* Fixed Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  z-index: 9999;
+  padding: 10px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar */
+#sidebar, aside {
+  width: 250px;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  top: 60px;
+}
+
+/* Main Content */
+.content {
+  margin-left: 250px;
+  background-color: #F8F9FA;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #009688;
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #00796b;
+}
+
+/* Mobile Sidebar Handling */
+@media (max-width: 767px) {
+  #sidebar {
+    position: absolute;
+    top: 0;
+    left: -250px;
+    transition: left 0.3s ease;
+  }
+
+  #sidebar.show {
+    left: 0;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  #mobileSidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #34495e;
+    z-index: 1050;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  #mobileSidebar.collapsed {
+    transform: translateY(-100%);
+  }
+
+  #mobileSidebar.expanded {
+    transform: translateY(0);
+  }
+}
