@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+    .main-content {
+        padding: 0;
+    }
+    
+    .auth-container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    
+    .form-container form {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-container .mt-4 {
+        margin-top: auto;
+    }
+}

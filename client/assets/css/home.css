@@ -1,0 +1,164 @@
+/* assets/css/home.css */
+
+/* 1. Base (mobile-first): Hero fills the rest of the screen under the 56px navbar */
+.hero-section {
+    background-color: var(--hero-bg);
+    width: 100%;
+    /* fill the full viewport under the navbar */
+    min-height: calc(100vh - 56px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    color: var(--hero-text);
+    position: relative;
+  }
+  
+  /* Hero content on mobile */
+  .hero-container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 1rem;
+  }
+  .hero-content p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Mobile buttons row */
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  /* Mobile image */
+  .hero-image {
+    animation: floating 8s ease-in-out infinite;
+    max-width: 100%;
+    height: auto;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Floating keyframes */
+  @keyframes floating {
+    0%   { transform: translate(0,   0) rotate(0deg); }
+    25%  { transform: translate(10px,-15px) rotate(2deg); }
+    50%  { transform: translate(-5px,-20px) rotate(-2deg); }
+    75%  { transform: translate(-10px,-10px) rotate(1deg); }
+    100% { transform: translate(0,   0) rotate(0deg); }
+  }
+  
+  /* 2. Desktop Overrides (≥992px) */
+  @media (min-width: 992px) {
+    .hero-section {
+      /* full-bleed width */
+      width: 100vw;
+      left: 50%;
+      margin-left: -50vw;
+      /* push down under navbar */
+      margin-top: 120px;
+      /* natural height, no forced fill */
+      min-height: auto;
+      padding: 6rem 2rem 4rem;
+      display: block;
+    }
+  
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
+  
+    .hero-content {
+      max-width: 600px;
+    }
+  
+    .hero-buttons {
+      justify-content: flex-start;
+      margin-bottom: 3rem;
+    }
+  
+    .hero-image {
+      margin-top: 0;
+    }
+  }
+  
+  /* 3. Buttons (shared) */
+  .hero-buttons .btn {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  /* Continue (primary) */
+  .hero-buttons .btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), color-mix(in srgb, var(--primary-color) 80%, black 20%));
+    color: #fff !important;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .hero-buttons .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 90%, white 10%), var(--primary-color)) !important;
+  }
+  
+  /* Sign Up (outline-light) */
+  .hero-buttons .btn-outline-light {
+    border: 2px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    background: transparent;
+  }
+  .hero-buttons .btn-outline-light:hover {
+    transform: translateY(-2px);
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    border-color: var(--primary-color) !important;
+  }
+  
+  /* 4. Cards Section (unchanged) */
+  .cards-section {
+    padding: 4rem 1rem;
+  }
+  .feature-card {
+    border: none !important;
+    color: var(--hero-text) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  }
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important;
+  }
+  .feature-card h3 {
+    color: var(--hero-text) !important;
+  }
+  .feature-card p {
+    color: var(--hero-text) !important;
+  }
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: none !important;
+    padding: 0 !important;
+  }
+  .cards-section .row .col-md-4:nth-child(1) .feature-icon i { color: #0d6efd; }
+  .cards-section .row .col-md-4:nth-child(2) .feature-icon i { color: #00d395; }
+  .cards-section .row .col-md-4:nth-child(3) .feature-icon i { color: #ffb300; }
+
+  .main-content {
+    padding: 0 !important;
+  }

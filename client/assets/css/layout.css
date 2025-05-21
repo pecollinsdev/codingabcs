@@ -1,0 +1,406 @@
+/* assets/css/layout.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+html, body {
+  margin: 0;
+  min-height: 100vh;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body {
+  padding-top: 60px; /* Account for fixed header */
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 60px); /* Account for header height */
+}
+
+.sidebar-desktop {
+  width: 280px; /* Increased width for better spacing */
+  border-right: 1px solid var(--border-color);
+  position: fixed;
+  top: 60px; /* Align with header */
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  background-color: var(--card-bg);
+  padding: 2rem 1.5rem; /* Increased padding */
+  z-index: 1000;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Add consistent gap between nav items */
+}
+
+.sidebar-nav .nav-link {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  background: transparent;
+  border: none;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-nav .nav-link:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary-color) 90%, white 10%), var(--primary-color));
+  color: #fff !important;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.sidebar-nav .nav-link.active {
+  background: linear-gradient(135deg, var(--primary-color), color-mix(in srgb, var(--primary-color) 80%, black 20%));
+  color: #fff !important;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.sidebar-nav .nav-link i {
+  width: 24px;
+  text-align: center;
+  margin-right: 0.75rem;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 280px; /* Match sidebar width */
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+}
+
+/* Adjust main content when sidebar is hidden */
+.main-content:not(.with-sidebar) {
+  margin-left: 0;
+}
+
+/* Special handling for quiz page */
+.main-content.quiz-page {
+  margin-left: 0;
+  padding: 0;
+}
+
+/* Card and Form Spacing */
+.main-content .card {
+  margin-bottom: 1.5rem;
+}
+
+
+/* Panels transition smoothly */
+.navbar,
+.hero-section,
+.feature-card,
+footer,
+.dropdown-menu {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Navbar styles */
+.navbar {
+  height: 60px;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  z-index: 1030;
+}
+
+.navbar-brand img {
+  transition: filter 0.3s ease;
+}
+
+.navbar-nav {
+  gap: 0.5rem;
+}
+
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: var(--hover-bg);
+  transform: translateY(-1px);
+}
+
+.navbar-nav .nav-link i {
+  font-size: 1.1rem;
+}
+
+/* Profile dropdown styles */
+#profileDropdown {
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+#profileDropdown i {
+  font-size: 1.5rem;
+}
+
+.dropdown-menu {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  min-width: 200px;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--hover-bg);
+  transform: translateX(4px);
+}
+
+.dropdown-item i {
+  width: 20px;
+  text-align: center;
+}
+
+.dropdown-divider {
+  border-color: var(--border-color);
+  margin: 0.5rem 0;
+}
+
+/* Theme toggle button */
+.theme-switch {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.theme-switch:hover {
+  color: var(--primary-color);
+}
+
+footer {
+  padding: 1.5rem;
+  background-color: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+#footer-container {
+  width: 100%;
+}
+
+/* Hide footer on mobile for auth pages */
+@media (max-width: 768px) {
+  body.auth-page footer {
+    display: none;
+  }
+}
+
+/* Mobile navigation styles */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-collapse:not(.show) {
+    transform: translateY(-100%);
+  }
+
+  .navbar-collapse.show {
+    transform: translateY(0);
+  }
+
+  .navbar-nav {
+    gap: 0.5rem;
+  }
+
+  .navbar-nav .nav-link {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    background-color: var(--hover-bg);
+    transform: translateX(4px);
+  }
+
+  .navbar-nav .nav-link i {
+    width: 20px;
+  }
+
+  #profileDropdown {
+    width: auto;
+    height: auto;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background-color: transparent;
+  }
+
+  #profileDropdown i {
+    font-size: 1.1rem;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  /* Special handling for quiz page on mobile */
+  .main-content.quiz-page {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  /* Special handling for quiz page on mobile */
+  .main-content.quiz-page {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Auth pages specific */
+  .auth-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Remove duplicate popup styles as they are now in theme.css */
+
+/* Sidebar Admin Section */
+.sidebar-divider {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+}
+
+.sidebar-heading {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Dark theme adjustments */
+.dark-theme .sidebar-divider {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .sidebar-heading {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.mobile-nav .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.mobile-nav .nav-link:hover {
+  background-color: var(--hover-bg);
+  transform: translateX(4px);
+}
+
+.mobile-nav .nav-link i {
+  width: 24px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.mobile-nav .nav-link span {
+  font-weight: 500;
+}
+
+.mobile-nav-divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 1rem 0;
+}
+
+.mobile-nav-heading {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Input group styles */
+.input-group-text {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.input-group-text i {
+  color: var(--text-color);
+}
+
+.input-group .form-control {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.input-group .form-control:focus {
+  background-color: var(--card-bg);
+  border-color: var(--primary-color);
+  color: var(--text-color);
+  box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.25);
+}
+
+/* Quiz card styles */
+.quiz-card .difficulty-badge {
+  margin-bottom: 1rem;
+  display: inline-block;
+}

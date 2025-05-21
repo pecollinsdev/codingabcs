@@ -1,0 +1,76 @@
+/* Pagination Styles */
+.pagination-container {
+    margin-top: 2rem;
+    padding: 1rem 0;
+}
+
+.pagination {
+    --pagination-bg: var(--card-bg);
+    --pagination-color: var(--text-color);
+    --pagination-border-color: var(--border-color);
+    --pagination-hover-bg: var(--hover-bg);
+    --pagination-active-bg: var(--primary-color);
+    --pagination-active-color: #fff;
+    --pagination-disabled-color: var(--text-color);
+    --pagination-disabled-bg: var(--card-bg);
+}
+
+.pagination .page-link {
+    background-color: var(--pagination-bg) !important;
+    border-color: var(--pagination-border-color) !important;
+    color: var(--pagination-color) !important;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: var(--pagination-hover-bg) !important;
+    border-color: var(--pagination-border-color) !important;
+    color: var(--pagination-color) !important;
+    transform: translateY(-2px);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--pagination-active-bg) !important;
+    border-color: var(--pagination-active-bg) !important;
+    color: var(--pagination-active-color) !important;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: var(--pagination-disabled-bg) !important;
+    border-color: var(--pagination-border-color) !important;
+    color: var(--pagination-disabled-color) !important;
+    opacity: 0.5;
+}
+
+.pagination .page-link i {
+    font-size: 0.875rem;
+}
+
+/* Dark theme adjustments */
+html.dark-theme .pagination .page-link {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+html.dark-theme .pagination .page-link:hover {
+    background-color: var(--hover-bg) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+html.dark-theme .pagination .page-item.active .page-link {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+html.dark-theme .pagination .page-item.disabled .page-link {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+    opacity: 0.5;
+}

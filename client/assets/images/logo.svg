@@ -1,0 +1,26 @@
+<svg width="500" height="80" viewBox="0 0 500 80" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text {
+      font-family: 'Courier New', monospace;
+      font-size: 40px;
+      fill: #10a37f;
+    }
+
+    .clip {
+      animation: clipAnim 4s steps(12, end) infinite;
+    }
+
+    @keyframes clipAnim {
+      0% { width: 0; }
+      35% { width: 385px; }
+      85% { width: 385px; }
+      100% { width: 0; }
+    }
+  </style>
+  <defs>
+    <clipPath id="text-clip">
+      <rect class="clip" x="0" y="0" height="80" width="0" />
+    </clipPath>
+  </defs>
+  <text x="10" y="55" class="text" clip-path="url(#text-clip)">Coding&lt;ABCs&gt;</text>
+</svg>

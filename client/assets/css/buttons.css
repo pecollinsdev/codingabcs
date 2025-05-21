@@ -1,0 +1,104 @@
+/* Shared Button Styles */
+
+/* Base Button Styles */
+.btn {
+    transition: all 0.3s ease !important;
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Primary Button */
+.btn-primary {
+    --bs-btn-bg: var(--primary-color) !important;
+    --bs-btn-border-color: var(--primary-color) !important;
+    --bs-btn-color: #fff !important;
+    --bs-btn-hover-bg: color-mix(in srgb, var(--primary-color) 90%, white 10%) !important;
+    --bs-btn-hover-border-color: color-mix(in srgb, var(--primary-color) 90%, white 10%) !important;
+    --bs-btn-hover-color: #fff !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Outline Button */
+.btn-outline-primary {
+    --bs-btn-color: var(--primary-color) !important;
+    --bs-btn-border-color: var(--primary-color) !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: var(--primary-color) !important;
+    --bs-btn-hover-border-color: var(--primary-color) !important;
+}
+
+.btn-outline-primary:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    --bs-btn-bg: var(--secondary-color) !important;
+    --bs-btn-border-color: var(--secondary-color) !important;
+    --bs-btn-color: #fff !important;
+    --bs-btn-hover-bg: color-mix(in srgb, var(--secondary-color) 90%, white 10%) !important;
+    --bs-btn-hover-border-color: color-mix(in srgb, var(--secondary-color) 90%, white 10%) !important;
+    --bs-btn-hover-color: #fff !important;
+}
+
+/* Success Button */
+.btn-success {
+    --bs-btn-bg: var(--success-color) !important;
+    --bs-btn-border-color: var(--success-color) !important;
+    --bs-btn-color: #fff !important;
+    --bs-btn-hover-bg: color-mix(in srgb, var(--success-color) 90%, white 10%) !important;
+    --bs-btn-hover-border-color: color-mix(in srgb, var(--success-color) 90%, white 10%) !important;
+    --bs-btn-hover-color: #fff !important;
+}
+
+/* Exit Button */
+.btn-exit {
+    --bs-btn-color: var(--danger-color) !important;
+    --bs-btn-border-color: var(--danger-color) !important;
+    --bs-btn-hover-color: #fff !important;
+    --bs-btn-hover-bg: var(--danger-color) !important;
+    --bs-btn-hover-border-color: var(--danger-color) !important;
+}
+
+/* Disabled State */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.65;
+    pointer-events: none;
+    transform: none !important;
+}
+
+/* Focus State */
+.btn:focus,
+.btn:focus-visible {
+    box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--primary-color) 25%, transparent 75%) !important;
+    outline: none;
+}
+
+/* Icon Spacing */
+.btn i {
+    margin-right: 0.5rem;
+}
+
+/* Small Button */
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+}
+
+/* Large Button */
+.btn-lg {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.125rem;
+} 

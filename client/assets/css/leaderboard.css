@@ -1,0 +1,227 @@
+/* Rank Card Enhancements */
+.rank-card .card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.rank-badge {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rank-badge i {
+    font-size: 2rem;
+    color: white;
+}
+
+.rank-number {
+    position: absolute;
+    bottom: -10px;
+    background: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-width: 40px;
+    text-align: center;
+}
+
+.rank-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.rank-card p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.rank-card p i {
+    width: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* Top Performers Enhancements */
+.leaderboard-card .table {
+    margin-bottom: 0;
+}
+
+.leaderboard-card th {
+    font-weight: 600;
+    color: var(--text-muted);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.leaderboard-card td {
+    vertical-align: middle;
+    padding: 1rem;
+}
+
+.leaderboard-card tr.top-1,
+.leaderboard-card tr.top-2,
+.leaderboard-card tr.top-3 {
+    background: rgba(var(--primary-rgb), 0.05);
+}
+
+.leaderboard-card tr.top-1 .rank-badge {
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+}
+
+.leaderboard-card tr.top-2 .rank-badge {
+    background: linear-gradient(135deg, #C0C0C0 0%, #A9A9A9 100%);
+}
+
+.leaderboard-card tr.top-3 .rank-badge {
+    background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+}
+
+/* Achievements Enhancements */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.achievement-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-2px);
+}
+
+.achievement-card.unlocked {
+    background: rgba(var(--primary-rgb), 0.05);
+}
+
+.achievement-card.locked {
+    opacity: 0.7;
+}
+
+.achievement-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.achievement-card.locked .achievement-icon {
+    background: var(--text-muted);
+}
+
+.achievement-info {
+    flex: 1;
+}
+
+.achievement-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
+}
+
+.achievement-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.achievement-info small {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Loading State */
+.leaderboard-container.loading {
+    position: relative;
+}
+
+.leaderboard-container.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Toast Notifications */
+.toast-container {
+    z-index: 1050;
+}
+
+.toast {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toast-header {
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+}
+
+.toast-body {
+    padding: 1rem;
+}
+
+.toast-error {
+    border-left: 4px solid var(--danger-color);
+}
+
+.toast-success {
+    border-left: 4px solid var(--success-color);
+}
+
+/* Mobile Responsive Table */
+@media (max-width: 768px) {
+    .leaderboard-card th:nth-child(n+3),
+    .leaderboard-card td:nth-child(n+3) {
+        display: none;
+    }
+    
+    .leaderboard-card th:nth-child(2),
+    .leaderboard-card td:nth-child(2) {
+        width: 100%;
+    }
+}

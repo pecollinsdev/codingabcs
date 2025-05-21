@@ -1,0 +1,31 @@
+/* Dashboard specific styles */
+.dashboard-container {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Activity list styles */
+.activity-feed .list-group-item {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+.activity-feed .list-group-item h6 {
+    color: var(--text-color) !important;
+    margin-bottom: 0.25rem;
+}
+
+.activity-feed .list-group-item small {
+    color: var(--text-muted) !important;
+}
+
+.activity-feed .list-group-item .activity-icon i {
+    color: var(--primary-color) !important;
+}
+
+/* Stat card values */
+.stat-card .stat-value {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--text-color);
+}
